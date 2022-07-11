@@ -1,0 +1,137 @@
+.login .form-login {
+    background-color: var(--blanco);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 80%;
+    margin: 50px auto;
+    padding: 50px 15px;
+    border: solid var(--verde-claro);
+}
+
+.login .form-login .titulo-logo {
+    text-align: center;
+}
+
+.login .titulo-logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.login .titulo-logo img {
+    display: none;
+    width: 35%;
+    height: max-content;
+}
+
+.login .email,
+.password {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 5px;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.login .email input,
+.password input {
+    padding: 5px;
+    border-style: solid;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 40px;
+    padding-inline-start: 15px;
+}
+
+.login .password input{
+    width: 87%;
+}
+
+.login .contraseña button{
+    background:none;
+    border: none;
+    color: black;
+    width: 13%;
+}
+
+.login .boton-login {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.login .boton-login button {
+    background-color: var(--verde-oscuro);
+    color: var(--blanco);
+    font-size: 16px;
+    padding: 6px 20px;
+    border: solid 1px;
+    border-radius: 5px;
+    width: 7rem;
+    margin: auto;
+}
+
+.login .boton-login button:hover {
+    border: solid 1px var(--negro-header);
+}
+
+.login .formulario .link-registro {
+    padding: 10px;
+    text-align: center;
+}
+
+.login .formulario .link-registro p {
+    font-style: oblique;
+}
+
+.login .formulario .link-registro a {
+    color: var(--verde-oscuro);
+}
+
+
+/* MENSAJE DE ERROR */
+
+.login .box-error {
+    text-align: center;
+}
+
+.login span {
+    color: red;
+}
+
+@media(min-width:568px) {
+    .login .form-login {
+        align-content: center;
+    }
+    .login .formulario {
+        width: 60%;
+        margin: auto;
+    }
+}
+
+@media(min-width:1024px) {
+    .login .form-login {
+        width: 60%;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .login .titulo-logo {
+        width: 100%;
+    }
+    .login .titulo-logo img {
+        display: block;
+    }
+    .login .email input,
+.password input{
+    font-size: 18px;
+}
+.login .boton-login button{
+    width: 150px;
+    padding: 9px;
+    font-size: 19px;
+}
+}

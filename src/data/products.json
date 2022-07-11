@@ -1,0 +1,103 @@
+[
+   {
+      "id": 1,
+      "name": "Marcadores Trabí",
+      "description": "Marcadores de excelente calidad, diseño y adaptabilidad a la vida cotidiana. Son los mejores del mercado",
+      "price": 320,
+      "feactures": [
+         "20 colores intensos, incluye gama completa de pasteles",
+         "Punta pincel de 4 mm de diámetro",
+         "Extra suave y ultra flexible",
+         "Ideales para lettering"
+      ],
+      "image": "producto-trabi.jpg"
+   },
+   {
+      "id": 2,
+      "name": "Cuaderno AVON universitario",
+      "description": "El mejor del mercado a la hora de tomar apuntes y realizar tus actividades y tareas",
+      "price": 240,
+      "feactures": [
+         "Cuaderno Universitario Tapa Flexible",
+         "x 80 Hojas",
+         "Rayado y Cuadriculado"
+      ],
+      "image": "cuaderno-avon-universitario.jpg"
+   },
+   {
+      "id": 3,
+      "name": "Lápices de Grafito Cuerpo Pastel",
+      "description": "Los lapiceros de grafito son el útil más básico y fundamental de tu equipo de dibujo, son un producto económico y muy versátil que puede generar desde dibujos técnicos a dibujos artísticos con grandes escalas tonales, nunca está de más saber un poco más de tal útil y modesta herramienta.",
+      "price": 150,
+      "feactures": [
+         "Contiene 12 lápices negros cuerpo paste",
+         "Cuerpo ergonómico"
+      ],
+      "image": "lapices-de-color.jpeg"
+   },
+   {
+      "id": 4,
+      "name": "Crayones Jumbo Simball",
+      "description": "Entrada Carpaccio de salmón con cítricos",
+      "price": 220,
+      "image": "crayones.jpg",
+      "feactures": [
+         "12 crayones compactos de excelente calidad",
+         "Mejores crayones del mercado"
+      ]
+   },
+   {
+      "id": 5,
+      "name": "Pincel escolar chato N°1",
+      "description": "Entrada Carpaccio de salmón con cítricos",
+      "price": 250,
+      "image": "pincel.jpg",
+      "feactures": [
+         "Pinceles profesionales de origen aleman"
+      ]
+   },
+   {
+      "id": 6,
+      "name": "Corrector Liquid Paper",
+      "description": "Entrada Carpaccio de salmón con cítricos",
+      "price": 180,
+      "image": "corrector-liquid-paper.jpg",
+      "feactures": [
+         "Corrector liquido",
+         "Contenido 7ml",
+         "Punta metalica"
+      ]
+   },
+   {
+      "id": 7,
+      "name": "Bolígrafo Simball Power Gel Classic Fluo",
+      "description": "Entrada Carpaccio de salmón con cítricos",
+      "price": 660,
+      "image": "SIMBALL_Power Gel_Classic_Fluo.jpg",
+      "feactures": [
+         "Tinta gel",
+         "Punta de 1 mm",
+         "Capuchón ventilado"
+      ]
+   },
+   {
+      "id": 8,
+      "name": "Marcadores celestes",
+      "description": "Marcadores celeste",
+      "price": 50,
+      "feactures": ["Punta celeste para pintar de celeste"],
+      "image": "default-product.jpg"
+   },
+   {
+      "id": 9,
+      "name": "Boligoma 2.0",
+      "description": "Excelente pegamento para adherir a toda superficie",
+      "price": 120,
+      "feactures": [
+         "Compacto",
+         "Practico y rapido",
+         "Comodo y sencillo"
+      ],
+      "image": "img-product-1635860510550.png"
+   }
+]

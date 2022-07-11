@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<%- include('partials/head',{title: 'Login'}) %>
+
+    <body class="login">
+        <%- include('partials/header') %>
+
+            <main>
+                <div class="form-login">
+                    <div class="titulo-logo">
+                        <h2>Inicio de Sesión</h2>
+                        <img src="/images/img-login.png" alt="">
+                    </div>
+                    <div class="formulario">
+                        <form id="form-login" action="" method="POST" autocomplete="off">
+                            <div class="email">
+                                <label for="">Email</label>
+                                <input type="email" name="email" id="email">
+                                <span id="error-email" class="small text-danger"></span>
+                                <span class="small" style='color: #666' id="info-email"></span>
+                            </div>
+                            <div class="password">
+                                <label for="">Contraseña</label>
+                                <div class="contraseña" style="display: flex;">
+                                    <input type="password" name="password" id="pass">
+                                    <button type="button" onclick="mostrarContrasena()" ><i class="far fa-eye"></i></button>
+                                </div>
+                                <span class="small text-info" id="info-password"></span>
+                                <span id="error-password" class="small text-danger"></span>
+                            </div>
+                            <div class="box-error">
+                                <span class="text-danger"><%= locals.errores && errores.email ? errores.email.msg : null %> </span>
+                            </div>
+                            <div class="box-check">
+                                <input type="checkbox" id="remember" name="remember">
+                                <label for="remember">Recordame</label>
+                            </div>
+                            <div class="boton-login">
+                                <span class="small text-danger" id="error-button"></span>
+                                <button id="button" type="submit">Ingresar</button>
+                            </div>
+                        </form>
+                        <div class="link-registro">
+                            <p>¿No tienes cuenta? </p><a class="btn-registro" href="/users/register">Registrate aquí</a>
+                        </div>
+
+                    </div>
+                </div>
+            </main>
+            <%- include('partials/footer') %>
+                <script src="/js/loginValidator.js"></script>
+                <script>
+                    function mostrarContrasena(){
+                        var tipo = document.getElementById("pass");
+                        if(tipo.type == "password"){
+                            tipo.type = "text";
+                        }else{
+                            tipo.type = "password";
+                        }
+                    }
+                  </script>
+    </body>
+
+</html>

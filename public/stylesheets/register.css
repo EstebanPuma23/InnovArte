@@ -1,0 +1,87 @@
+.register .formulario-register {
+    margin: 10px auto;
+    padding: 10px 15px;
+    width: 90%;
+    max-width: 300px;
+    border: 2px solid var(--verde-claro);
+    border-radius: 5px;
+}
+
+.register div.formulario-register h2 {
+    text-align: center;
+    padding: 20px 0;
+    color: var(--verde-claro);
+}
+
+.form div label {
+    padding-left: 15px;
+}
+.form .condicion-registro{
+    display: flex;
+    justify-content: center;
+}
+.form .condicion-registro input{
+ width: auto;
+ margin: auto;
+ padding: auto;
+ 
+}
+.form .condicion-registro label{
+    font-size: 13px;
+    display: flex;
+    align-items: center;  
+    padding-left: 3px;
+  
+}
+.form input {
+    
+    width: 90%;
+    border-style: solid;
+    border-radius: 5px;
+    height: 30px;
+    margin: 0.5rem;
+
+}
+
+.form div.condicion-registro {
+    white-space: nowrap;
+}
+.form .boton-registro {
+    display: flex;
+    justify-content: center;
+}
+
+.form div.boton-registro button {
+    padding: 6px 20px;
+    border: solid 1px;
+    background: var(--verde-oscuro);
+    cursor: pointer;
+    color: var(--blanco);
+    font-size: 16px;
+    border-radius: 5px;
+}
+.formulario-register .link-login{
+    padding: 10px;
+    text-align: center;
+}
+.formulario-register .link-login p{
+    font-style: oblique;
+}
+
+.formulario-register .link-login a{
+    color: var(--verde-oscuro);
+}
+
+/* boton ojito */
+.formulario-register .ojito{
+    padding: 2px;
+    height: 100%;
+    margin-top: 8px
+}
+
+.formulario-register .contraseña button{
+    background:none;
+    border: none;
+    color: black;
+    width: 13%;
+}

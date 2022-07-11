@@ -1,0 +1,27 @@
+.cont-perfil{
+    width: 50%;
+    margin: 20px auto;
+    background-color: var(--gris-claro);
+}
+
+.cont-perfil div.titulo h4{
+    text-align: center;
+    padding: 10px 0;
+    color: var(--verde-claro);
+}
+.cont-perfil .cont-img-datos{
+    display: flex;
+    justify-content: space-evenly;
+    padding-bottom: 10px;
+}
+.cont-perfil .cont-img-datos .perfil-img{
+    width: 40%;
+    margin: 7px;
+    text-align: center;
+}
+.cont-perfil .cont-img-datos .subir-imagen{
+    margin-top: 7px;
+}
+ .datos-perfil .boton-perfil{
+    margin-top: 7px;
+ }

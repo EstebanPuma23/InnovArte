@@ -1,0 +1,114 @@
+.product-view{
+    background-color: var(--blanco);
+    color: var(--negro);
+    margin: 0 auto;
+}
+.contenedor-detalle{
+    width: 90%;
+    margin: 10px auto;
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.product-view .contenedor-detalle .img-articulo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.product-view .contenedor-detalle .img-articulo img{
+  width: 50%;
+  margin: auto;
+
+}
+.product-view .contenedor-detalle .product-preci{
+ padding: 10px 0;
+ border-bottom: 2px solid var(--grisOscuro);
+ text-align: center;
+}
+
+.product-view .contenedor-detalle .img-colores{
+    width: 100%;
+   }
+.product-view .contenedor-detalle .img-colores img{
+    width: 100%;
+   }
+.product-view .product-preci{
+    width: 100%;
+}
+.color{
+    border-radius: 50%;
+    border: 1px;
+}
+.product-view .contenedor-detalle .descripcion{
+    border: 1px solid var(--verde-claro);
+    padding: 10px;
+}
+
+.product-view .contenedor-detalle .descripcion p{
+    padding: 10px 0;
+}
+.product-view .contenedor-detalle .descripcion .caracteristicas{
+    padding-left: 20px;
+}
+.product-view .contenedor-detalle .descripcion .caracteristicas ol li{
+    list-style:circle;
+    font-size: 11px;
+    padding: 5px 0;
+}
+.product-view .contenedor-detalle .buton-producto{
+    display:flex;
+    margin: 10px;
+    justify-content: center;
+
+}
+.product-view .contenedor-detalle .buton-producto div{
+   padding: 0 10px;
+}
+.product-view .contenedor-detalle .buton-producto button{
+    padding: 6px 20px;
+    border: solid 1px;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 5px;
+}
+.product-view .contenedor-detalle .buton-producto .boton-agregar button{
+    background: var(--verde-oscuro);
+    color: var(--blanco);
+}
+
+.container .back-div{
+    padding: 10px 0;
+    width: 15%;
+}
+.container .back-btn{
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(33,37,41);
+}
+@media (min-width:768px) {
+    .product-view .contenedor-detalle .descripcion{
+        margin-top: 40px;
+    }
+}
+@media (min-width:1024px) {
+    .contenedor-detalle{
+        flex-direction:row;
+    }
+    .product-view .contenedor-detalle .img-articulo{
+        width: 50%;
+    }
+    .product-view .contenedor-detalle .color-boton{
+        width: 50%;
+    }
+
+       .product-view .contenedor-detalle .descripcion{
+        width: 55%;
+    }
+    .product-view .contenedor-detalle .descripcion .caracteristicas ol li{
+        font-size: 15px;
+    }
+    .product-view .contenedor-detalle .buton-producto button{
+        font-size: 16px;
+    }
+}

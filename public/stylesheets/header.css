@@ -1,0 +1,391 @@
+header {
+
+    box-sizing: border-box;
+
+    font-family:var(--Montserrat) ;
+    text-align: center;
+}
+
+ /* bloque inicio sesion - registro  */
+header .bloque-sesion{
+    padding: 3px 0;
+    background-color: var(--negro-header);
+    /* border: solid 3px #39A872 */
+}
+
+header .bloque-sesion ul {
+    display: flex;
+    padding: 0;
+    align-items: center;
+    margin: 0 ;
+    
+}
+
+header .bloque-sesion ul li{
+    margin-right: 5px;
+}
+header .bloque-sesion ul li a{
+    
+    color: var(--blanco);
+    font-size: 12px;
+    font-family: var(--Montserrat);
+}
+
+header .btn-cart {
+    border: 0;
+    background: none;
+    margin-right: 15px;
+    position: relative; }
+    header .btn-cart i {
+      font-size: 40px; }
+    header .btn-cart span {
+      font-size: 16px;
+      position: absolute;
+      top: 2px;
+      right: -4px; }
+/* Bloque buscador */
+
+
+header .bloque-nav .buscador{
+    display: none;
+    align-items: center;
+    width:40%;
+    justify-content: center;
+}
+
+header .bloque-nav .buscador .h4{
+    color: var(--negro);
+    margin:0;
+    font-size: 18px;
+}
+
+header .bloque-nav .buscador .btn-buscar{
+    width: 100%;
+}
+header .bloque-nav .buscador .btn-buscar input{
+    display: block;
+    background-color: var(--blanco);
+    width: 100%;
+    padding: 9px 3px;
+    border: solid 1px grey;
+    border-radius: 10px;
+    text-align: center;
+}
+
+header .bloque-nav .buscador .btn-buscar input:hover{
+    outline: none;
+}
+
+header .bloque-nav .buscador a{
+    color: var(--negro);
+}
+
+header form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+header .buscador button {
+    width: 10%;
+    background: bottom;
+    border-style: hidden;
+}
+
+
+/* Bloque logo */
+
+
+header .bloque-nav{
+    display: flex;
+    align-items: center;
+    width: auto;
+    border: solid 1px #666;
+    justify-content: space-evenly;
+    background-color: var(--blanco);
+
+    /*     background-color: var(--verde-oscuro) ; */
+    padding: 7px 0;
+    
+}
+
+header .bloque-nav .img-logo{
+    display: flex;
+    width: 40%;
+    margin-left: 15px;
+    
+}
+
+header .bloque-nav a img{
+    width: 90%;
+}
+
+
+/* Bloque botones movil */
+
+
+header ul{
+    margin-bottom: 0;
+}
+
+header .nav-bar-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0%;
+    width: 40%;
+    position: relative;
+}
+
+header .nav-bar-header .subMenuMovil{
+    display: none;
+    z-index: 1000;
+    background-color: #444444cc;
+}
+
+header .nav-bar-header .subMenuMovil li {
+    justify-content: center;
+}
+
+header .nav-bar-header:hover .subMenuMovil{
+    position: absolute;
+    display: block;
+}
+
+
+header .nav-bar-tablet{
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0%;
+    width: 20%;
+    margin-right: 20px
+}
+
+header .nav-bar-escritorio{
+    display: none;
+    width: 18%;
+    justify-content: space-around;
+    padding: 0;
+}
+
+header .nav-bar-escritorio .fa-user-circle{
+    font-size: 20px;
+}
+header .nav-bar-escritorio li a{
+    color: var(--negro);
+}
+
+
+header .nav-bar-header li a, .nav-bar-tablet li a{
+    color: var(--negro);
+    font-size: 24px;
+    width: 20%;
+    justify-content: space-around;
+}
+
+header .user-account{
+    display: none;
+}
+
+header .nav-social{
+    display: none;
+    justify-content: space-between;
+    background-color: #000000CC;
+    flex-wrap: wrap;
+}
+
+
+header .nav-social ul{
+    display: flex;
+    padding: 0;
+    width: 30%;
+}
+
+header .nav-social ul a:hover {
+    color: var(--blanco);
+}
+
+header .nav-social .prod-of{
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Kanit', sans-serif;
+}
+header .nav-social .prod-of li{
+  margin-left: 10px;
+  font-size: 16px;
+}
+header .nav-social .prod-of li a{
+    font-size: 16px;
+}
+
+
+header .btn-inicio{
+    font-size: 16px;
+}
+
+header .nav-social, ul li a{
+   padding: 4px ; 
+   color: var(--blanco);
+   font-size: 20px;
+}
+
+header .nav-social .cesta{
+    display: none;
+    align-items: center;
+}
+header .nav-social .cesta a{
+    color: var(--blanco);
+    font-size: 16px;
+}
+
+header .nav-social .cesta a i{
+    font-size: 18px;
+    margin-left: 10px;
+}
+header .redes{
+    display: flex;
+    justify-content: center;
+}
+
+header .redes li a{
+    font-size: 23px;
+}
+
+header .whatsapp{
+    color: var(--verde-oscuro);
+}
+
+header .ig{
+    color:var(--rojo);
+}
+
+header .facebook{
+    color:var(--azul) ;
+}
+ 
+input.form-control:focus, 
+input[type=text]:focus,
+[type=text].form-control:focus,
+[contenteditable].form-control:focus {
+  box-shadow: inset 0 -1px 0 #ddd;
+}
+
+
+/* 
+busc
+user-account
+cesta
+nav-social
+ */
+
+@media(min-width: 568px){
+    header .bloque-sesion{
+        display: none;
+    }
+    
+    header .bloque-nav {
+        justify-content: space-between;
+    }
+
+    header .bloque-nav .img-logo{
+        width: 30%;
+    }
+    header .nav-bar-tablet li{
+        display: inline-block;
+        position: relative;
+        width: 100px;
+    }
+    header .nav-bar-tablet .submenu-user{
+        display: none;
+    background: var(--verde-claro);
+    border-radius: 0 0 5px 5px;
+    padding: 0;
+    transition: all 0.4s;
+    }
+    header .nav-bar-tablet li:hover .submenu-user{
+        display: block;
+        position: absolute;
+        z-index: 100;
+    }
+    header .nav-bar-tablet li:hover .submenu-user i{
+       font-size: 10px;
+    }
+    header .nav-bar-tablet li:hover .submenu-user li a{
+        font-size: 11px;
+    }
+
+    header .nav-bar-header{
+        display: none;
+    }
+
+    header .nav-bar-tablet{
+        display: flex;
+    }
+    
+    header .btn-categorias{
+        display: none;
+    }
+
+    header .nav-social{
+        display: flex;
+    }
+
+
+}
+
+
+@media(min-width:1024px){
+    header .bloque-nav {
+        justify-content: space-evenly;
+        font-family: 'Kanit', sans-serif;
+    }
+    header .bloque-nav .buscador{
+        display: flex;
+    }
+    header .nav-bar-tablet{
+        display: none;
+    }
+    header .nav-bar-escritorio{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    header .nav-bar-escritorio li{
+        display: inline-block;
+        position: relative;
+    }
+    header .nav-bar-escritorio .submenu-user{
+        display: none;
+        z-index: 100;
+        background: var(--blanco);
+        border-radius: 0 0 5px 5px;
+        padding: 0;
+    }
+    header .nav-bar-escritorio li:hover .submenu-user{
+        display: block;
+        position: absolute;
+    }
+    header .nav-bar-escritorio li:hover .submenu-user i{
+       font-size: 10px;
+    }
+    header .nav-bar-escritorio li:hover .submenu-user li a{
+        font-size: 11px;
+    }
+    
+    header .bloque-nav .img-logo{
+        width: 20%;
+    }
+
+
+    header .whatsapp, .ig, .facebook {
+        display:none;
+    }
+    
+    header .nav-social .cesta{
+        display: flex;
+    }
+    
+}

@@ -1,0 +1,58 @@
+[
+   {
+      "id": 1,
+      "name": "Francoo",
+      "email": "franco@innovarte.com",
+      "password": "$2a$10$iSs4scyNPcTXv9D16pjLJ.ZtV0kCS5SrmJ87.1vr8fbOkx0PUTWLa",
+      "profile_picture": "profile_picture-1638462209693.jfif",
+      "rol": "admin"
+   },
+   {
+      "id": 2,
+      "name": "erne",
+      "email": "erne@innovarte.com",
+      "password": "$2a$10$gBxYwurOsUpgRAkW9vhs0eSScqsHkWv1j09I.P6wDLEGu2yT4SxKu",
+      "profile_picture": "foto-default.jpg",
+      "rol": "user"
+   },
+   {
+      "id": 3,
+      "name": "Aixa",
+      "email": "aixafs@innovarte.com",
+      "password": "$2a$10$53lxykqO.AvDAGzJX8Y17uJ3gm1T5gbOrDdd975ZryUL5bZ4WFlHK",
+      "profile_picture": "foto-default.jpg",
+      "rol": "user"
+   },
+   {
+      "id": 4,
+      "name": "Esteban",
+      "email": "estebanpuma@innovarte.com",
+      "password": "$2a$10$FlWJu2jQ7mk5yAdNKWvxp.nQvgiSS1NX74a0Kvq9Ofi4wyp.C7L2u",
+      "profile_picture": "foto-default.jpg",
+      "rol": "admin"
+   },
+   {
+      "id": 5,
+      "name": "damian",
+      "email": "damian@prueba.com",
+      "password": "$2a$10$mif6g2RCs3ehmlzcUXGjJu.fmrY4Q0nOP8NgUXj/HAGUV8FSM7R0C",
+      "profile_picture": "foto-defult.jpg",
+      "rol": "user"
+   },
+   {
+      "id": 6,
+      "name": "prueba",
+      "email": "prueba@123.com",
+      "password": "$2a$10$wNg2Z8xiC4K42rSLa6sGBeQR3RQTh7jO9A1VSDUeIhEnYHue5CWUC",
+      "profile_picture": "foto-defult.jpg",
+      "rol": "user"
+   },
+   {
+      "id": 7,
+      "name": "lucas",
+      "email": "lucas@123.com",
+      "password": "$2a$10$sFrFsbTRKna5hvyF2l8TgOzO3gyZhynhm.nyevF3s/V29wqC1KJoq",
+      "profile_picture": "foto-defult.jpg",
+      "rol": "user"
+   }
+]

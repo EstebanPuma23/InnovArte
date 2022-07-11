@@ -1,0 +1,46 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin:0;
+}
+header, footer{
+    font-family: var(--openSans);
+}
+footer{
+    margin-bottom: 0;
+    padding-bottom:0 ;
+}
+main{
+    font-family: var(--Montserrat);
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+span.error{
+    color: red;
+    font-size: 14px;
+}
+:root{
+    --Montserrat : 'Montserrat';
+    --openSans : 'Open-Sans', sans-serif;
+    --negro: #000;
+    --grisOscuro: #666;
+    --verde-oscuro: #1E9C5F;
+    --verde-claro: #6fc66d ;
+    --blanco:#fff;
+    --gris-claro: #ddd;
+    --rojo:rgb(151, 48, 23);
+    --azul:steelblue;
+    --negro-header: #000000CC;
+}
+
+
+
+
+
+
+

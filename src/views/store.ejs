@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('partials/head') %> 
+
+
+<body>
+    <%- include('partials/header') %> 
+
+    
+    <main class="main-store">
+        <h3>Mi carrito</h3>
+        <div class="container-main">
+            <div class="container-store">
+                <div class="titulos">
+                    <ol>
+                        <li>Imagen</li>
+                        <li>Nombre</li>
+                        <li>Cantidad</li>
+                        <li>Precio</li>
+                    </ol>
+                </div>
+                <section class="filas" id="tablaCarts">
+    
+                </section>
+            </div>
+            <div class="total-button">
+                <div class="container-total">
+                    <section>
+                        
+                        <div class="envio-total">
+                            <div class="total">
+                                <p>Precio Total:</p> <p id="price">$0.00</p>
+                            </div>
+ 
+                        </div>
+
+                    </section>
+                </div>
+                <div class="container-button">
+                    <section>
+                        <div class="boton-continuar">
+                            <a href="/products/product-list" class="btn btn-primary" style="color: white;">Seguir comprando</a>
+                        </div>
+                        <div class="boton-pagar">
+                            <button id="finalizar-comprar" onclick="alert('gracias por su comprar!!! Felices Fiestas')" type="submit">Finalizar compra</button>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        </div>
+
+
+    </main>
+    <%- include('partials/footer') %> 
+
+</body>
+<script src="/js/viewCart.js"></script>
+</html>

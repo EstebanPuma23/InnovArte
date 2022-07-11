@@ -1,0 +1,221 @@
+.main-store{
+    margin-bottom: 20px auto;
+    font-family: var(--Montserrat);
+}
+.main-store h3{
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 32px;
+    color: var(--verde-oscuro);
+    background-color: rgba(111, 190, 109, 0.1);
+}
+.main-store .titulos ol li{
+    font-weight: 900;
+}
+.main-store a{
+    color: var(--negro);
+}
+.filas span{
+    color:#006afd;
+}
+main .container-store{
+    width: 90%;
+    margin: 10px auto;
+    border: 1px solid rgb(168, 165, 165);
+    border-radius: 5px;
+    max-width: 750px;
+}
+main .titulos{
+    display: none;
+}
+main div.titulos ol{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    background-color: var(--verde-claro);
+    color: var(--blanco);
+}
+
+main .filas .articulos{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    flex-direction: column;
+}
+.filas p{
+    font-size: 12px;
+    text-align: center;
+    padding: 5px;
+}
+.filas .articulo-comprar{
+    width: 150px;
+    margin: 0 auto;
+}
+.filas .articulo-comprar img{
+    max-width: 150px;
+}
+.filas .nombre-articulo{
+    justify-content: center;
+    display: flex;
+}
+.filas .cantidad-articulo{
+    justify-content: center;
+    display: flex;
+}
+.filas .precio-articulo{
+    justify-content: center;
+    display: flex;
+}
+.filas .fa-times-circle:before {
+    display: none;
+}
+.filas .eliminar-articulo{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding-right: 3px;
+}
+
+main .container-total{
+    width: 100%;
+    margin: 5px auto;
+  
+    border-radius: 5px;
+    
+    max-width: 400px;
+}
+main .container-button section{
+    display: flex;
+    justify-content:center;
+    
+}
+main .boton-costo{
+    display: flex;
+    justify-content:center;
+    margin: 5px 0;
+}
+main .envio-total{
+ border: 1px solid var(--grisOscuro);
+ border-radius: 25px;
+    padding:15px;
+    margin: 0 8px;
+}
+.envio-total .envio{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.envio-total .total{
+    display: flex;
+    justify-content: space-between;
+}
+.envio-total  p{
+    font-size: 17px;
+    font-weight: 900;
+}
+main .container-button{
+    padding-bottom: 10px;
+}
+main .container-button .boton-continuar, .boton-pagar{
+    padding: 0 10px ;
+}
+.container-button .boton-continuar button{
+    padding: 6px 20px;
+    border: solid 1px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.container-button .boton-pagar button{
+    padding: 6px 20px;
+    border: solid 1px;
+    background: var(--verde-oscuro);
+    cursor: pointer;
+    color: var(--blanco);
+    font-size: 16px;
+    border-radius: 5px;
+}
+@media (min-width:768px) {
+    .filas .fa-times-circle:before {
+        display: inline;
+    }
+    main .titulos{
+        display: inline ;
+    }
+    .filas p{
+        font-size: 15px;
+    }
+    .filas span {
+        display: none;
+    }
+    main .filas .articulos {
+        flex-direction:row;
+    }
+    .filas .articulo-comprar {
+        width: 25%;
+    }
+    .filas .nombre-articulo{
+        width: 20%;
+        align-items: center;
+    }
+    .filas .cantidad-articulo{
+        width: 25%;
+        align-items: center;
+
+    }
+    .filas .precio-articulo{
+        width: 20%;
+        align-items: center;
+
+    }
+}
+@media (min-width:1024px) {
+    .filas span {
+        display: inline;
+    }
+    .container-main{
+        display: flex;
+        flex-wrap:wrap;
+    }
+    main .container-store{
+        width: 60%;
+    }
+    main .container-total{
+        padding-right: 10px;
+    }
+    .filas .articulo-comprar {
+        width: 25%;
+    }
+    .filas .nombre-articulo{
+        width: 15%;
+    }
+    .filas .cantidad-articulo{
+        width: 25%;
+    }
+    .filas .precio-articulo{
+        width: 20%;
+
+    }
+    .filas .eliminar-articulo .eliminar-boton{
+        display:none;
+    }
+    .filas .eliminar-articulo .eliminar{
+        display:inline;
+    }
+    .total-button{
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    main .boton-costo button{
+        padding: 6px 20px;
+    border: solid 1px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    }
+    .container-button section div button{
+        font-size: 15px;
+    }
+}

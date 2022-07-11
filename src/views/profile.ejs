@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head', {title: 'Perfil de usuario' }) %>
+
+
+    <body>
+        <%- include('partials/header') %>
+
+            <main class="perfil-usuario">
+
+                <div class="cont-perfil">
+                    <div class="titulo">
+                        <h4>Perfil de usuario</h4>
+                    </div>
+                    <div class="cont-img-datos">
+
+                        <div class="perfil-img">
+                            <img class="img-perfil"  style="width: 200px; height: 200px;"
+                                src="/images/<%= user.profile %>" alt="">
+                            <div class="subir-imagen">
+                                <label for="profile_picture" id="imagen" class="btn btn-outline-secondary w-100 mt-2">Subir imagen
+                                    de perfil</label>
+                                    <span id="imageError" class="text-danger small ms-2"><%= (typeof errors != "undefined") && errors.image ? errors.image.msg : null%> </span>
+
+                            </div>
+                        </div>
+
+                        <div class="datos-perfil">
+                            <form action="" id="form-perfil" method="POST" enctype="multipart/form-data">
+                                <input hidden class="" type="file" id="profile_picture" name="profile_picture">
+                                <div class="cont-nombre">
+                                    <div class="nombre-perfil">
+                                        <label for="name">Nombre y apellido</label>
+                                        <input type="text"
+                                            class="form-control <%= (typeof errors != "undefined") && errors.name ? 'is-invalid' : null %>"
+                                            id="name" placeholder="ej: Franco Lopez " name="name" value="<%= user.name + ' ' + user.surname %>">
+
+                                    </div>
+                                    <span class="error" id="error-name">
+                                        <%= (typeof errors != "undefined") && errors.name ? errors.name.msg : null%>
+                                    </span>
+                                </div>
+                                <div class="cont-email">
+                                    <div class="email-perfil">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Email"
+                                            name="email" value="<%= user.email %>" disabled>
+
+                                    </div>
+                                </div>
+                                <div class="cont-password">
+                                    <div class="perfil-password">
+                                        <label for="password-origin">Contraseña Actual</label>
+                                        <input type="password" class="form-control" id="password-origin"
+                                            placeholder="Contraseña" name="passwordOrigin">
+
+                                    </div>
+
+                                    <div class="perfil-password">
+                                        <label for="password">Cambiar contraseña</label>
+                                        <input type="password" class="form-control" id="password"
+                                            placeholder="Contraseña" name="password">
+
+                                    </div>
+
+                                    <div class="repetircontra">
+                                        <label for="repeatpass">Repetir contraseña</label>
+                                        <input type="password" class="form-control" name="repeatpass" id="repeatpass" placeholder="Repetir">                
+                                    </div>
+
+                                    <span class="error" id="error-password">
+                                        <%= (typeof errors != "undefined") && errors.passwordOrigin? errors.passwordOrigin.msg : null%>
+                                    </span>
+
+                                </div>
+
+                                <div class="boton-perfil">
+                                    <button type="submit" class="">Guardar cambios</button>
+                                </div>
+
+                            </form>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </main>
+            <%- include('partials/footer') %>
+                <script src="/js/profile.js"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <%- include('partials/head', {title: 'Registro de usuario'}) %> 
+
+
+<body class="register">
+    <%- include('partials/header') %> 
+
+    <main>
+        <div class="formulario-register">
+            <h2>Crear cuenta</h2>
+            <div class="form">
+                <form action="" method="POST" id="formulario-register">
+                    <div class="usuario">
+                        <label for="user">Nombre y Apellido</label>
+                        <input class="form-control" type="text" placeholder="Ej: Mario Nuñez" name="name" id="user" value="<%= locals.old && old.name ? old.name : null %>">
+                        <span id="errorUser" class="error"><%= locals.errores && errores.name ? errores.name.msg : null %> </span>
+                        <span id="info-user" class="text-info" ></span>
+                    </div>
+                    <div class="mail">
+                        <label for="email">Email</label>
+                        <input class="form-control" type="email" placeholder="Ej: nombre@email.com" name="email" id="email">
+                        <span id="errorEmail" class="error"><%= locals.errores && errores.email ? errores.email.msg : null %> 
+                       </span>
+                       <span id="info-email" class="text-info" ></span>
+                    </div>
+                    <div class="contraseña" >
+                        <label for="pass">Contraseña</label>
+                        <div class="contraseña" style="display: flex;">
+                            <input  type="password" name="password" id="password">
+                            <button type="button" onclick="mostrarContrasena()" ><i class="fa fa-eye"></i>
+                             </button>
+                        </div>
+                       
+                        <span id="errorPassw" class="error"><%= locals.errores && errores.password ? errores.password.msg : null %> </span>
+                        <span id="info-passw" class="small text-info" ></span>
+                       
+                    </div>
+                    <div class="repetircontra">
+                        <label for="repeatpass">Repetir contraseña</label>
+                        <input class="form-control" type="password" name="repeatpass" id="repeatpass">
+                        <span id="errorPassw2" class="error"><%= locals.errores && errores.repeatpass ? errores.repeatpass.msg : null %> </span>
+                        <span id="info-passw2" class="text-info" ></span>
+                    </div>
+                    <div class="condicion-registro">
+
+                        <input type="checkbox" name="terminos" id="terminos">
+                        <label for="terminos">Acepta los terminos y condiciones</label>
+
+       
+                    </div>
+                    <span id="error-terms" class="error"><%= locals.errores && errores.terms ? errores.terms.msg : null %> </span>
+
+                    <div class="boton-registro">
+                        <button type="submit">Registrarme</button>
+                    
+                    </div>
+                </form>
+            </div>
+            <div class="link-login">
+                <p>¿Ya tenes una cuenta? </p><a class="btn-login" href="/users/login">Iniciar sesion</a>
+            </div>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %> 
+    <script src="/js/registerValidator.js"></script>
+    <script>
+        function mostrarContrasena(){
+            var tipo =  document.getElementById("password");
+            if(tipo.type == "password"){
+                            tipo.type = "text";
+                        }else{
+                            tipo.type = "password";
+                        }
+                    
+        }
+    </script>
+</body>
+

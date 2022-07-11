@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head') %> 
+
+<body>
+    <%- include('partials/header') %> 
+
+    <main>
+        <div class="container-arrepentimiento">
+            <h2>Boton de arrepentimiento</h2>
+            <h3>Devoluciones de compras en internet</h3>
+            <div class="condicion-reclamo">
+                <p>Te recordamos que el producto a devolver debe estar tal cual lo recibiste. Tenés hasta 10 dias de corridos desde que lo compraste y/o recibiste para realizar la devolución.</p>
+         
+            </div>
+            <div class="main-arrepentimiento">
+                <h2>Por favor complete los siguientes datos:</h2>
+                <div class="form-arrepentimiento">
+                    <form action="/arrepentimiento">
+                        <div class="usuario">
+                            <label for="user">Nombre</label>
+                            <input type="text" name="user" id="user">
+                        </div>
+                        <div class="mail">
+                            <label for="email">Mail</label>
+                            <input type="email" name="email" id="email">
+                        </div>
+                        <div class="repetirmail">
+                            <label for="repeatmail">Repetir mail</label>
+                            <input type="email" name="repeatmail" id="repeatmail">
+                        </div>
+                        <div class="Nro-de-compra">
+                            <label for="nro-compra">Nro de compra</label>
+                            <input type="text" name="nro-compra" id="nro-compra">
+                        </div>
+                        <div class="nombre-producto">
+                            <label for="producto-nombre">Nombre del producto</label>
+                            <input type="text" name="producto-nombre" id="producto-nombre">
+                        </div>
+                        <div class="boton-finalizar">
+                            <button type="submit">enviar</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+        
+    </main>
+    <%- include('partials/footer') %> 
+
+</body>
+</html>

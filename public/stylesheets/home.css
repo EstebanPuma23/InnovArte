@@ -1,0 +1,278 @@
+main {
+    box-sizing: border-box;
+    background-color: #ebebeb;
+}
+
+main .banner {
+    display: block;
+}
+
+main .banner a img {
+    width: 100%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+    /* margin: 18% 0; */
+    width: 10%;
+}
+
+main .main-section {
+    color: var(--negro);
+    width: 80%;
+    margin: 0 auto;
+    /* background-color: white; */
+}
+
+main .main-section h3 {
+    padding-top: 30px;
+    text-align: center;
+    font-family: 'Montserrat';
+    color: rgba(0, 0, 0, 65%);
+}
+
+main .glider-contain .glider {
+    padding-top: 30px;
+}
+
+main .productos,
+.destacados,
+.ofertas {
+    display: flex;
+    color: var(--negro);
+    margin-top: 15px;
+    width: 100%;
+    flex-direction: column;
+}
+
+main .ofertas .art .prod {
+    width: 60%;
+}
+
+main .prod span{
+    color: #239B56;
+}
+
+main .art {
+    margin-bottom: 20px;
+}
+
+main .art .prod {
+    transition: all .2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .ofertas .art:last-child {
+    display: none;
+}
+
+main .productos .prod {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    text-align: center;
+    line-height: 30px;
+    background-color: var(--blanco);
+    margin: 0 auto;
+    margin-bottom: 15px;
+    /* border-radius: 19px; */
+    /* font-family: 'Maven Pro', sans-serif; */
+    font-family: 'Kanit', sans-serif;
+}
+
+main .ofertas-dskp {
+    display: none;
+}
+
+main .productos .prod img {
+    width: 100%;
+    /*      border: solid 1px rgb(160, 159, 159); 
+ */
+    margin-bottom: 0;
+    /*     border-radius:19px 19px 0 0 ;
+ */
+}
+
+main .main-section p {
+    margin: 10px 0;
+}
+
+main .botones {
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    /*  border-left: solid rgb(160, 159, 159) 1px;
+    border-right:  solid rgb(160, 159, 159) 1px;
+    border-bottom:  solid rgb(160, 159, 159) 1px; */
+    width: 100%;
+    justify-content: space-around;
+    padding: 3px 0;
+    border-radius: 0 0 10px 10px;
+}
+
+main .botones .agregar {
+    display: block;
+    margin: 0 15px;
+    justify-content: right;
+    border-radius: 5px;
+    padding: 0 15px;
+    color: var(--verde-oscuro);
+    transition: all 0.3s;
+    font-size: 20px;
+}
+
+main .botones .agregar:hover i {
+    transition: all 0.4s;
+    transform: scale(1.5);
+}
+
+main .botones input {
+    display: block;
+    border: solid 1px;
+    border-radius: 9px;
+    width: 20%;
+    padding: 3px 0;
+    text-align: center;
+}
+
+main .botones a {
+    color: var(--verde-oscuro);
+}
+
+main .detalles-producto {
+    font-size: 15px;
+    transition: all 0.5s;
+}
+
+main .carg-productos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+main .carg-productos a {
+    width: 70%;
+    font-family: 'Kanit';
+    max-width: 70%;
+    padding: 6px;
+    border-radius: 6px;
+    border: solid 1px rgb(160, 159, 159);
+    background-color: white;
+    color: #000;
+    text-align: center;
+}
+
+@media(min-width:568px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        display: flex;
+        height: 30%;
+        margin: auto;
+    }
+    main .productos,
+    .destacados,
+    .ofertas {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    main .glider-contain .art {
+        width: 70%;
+        margin: 0 auto;
+    }
+    main .ofertas .art {
+        width: 33%;
+    }
+    main .glider-contain .prod {
+        width: 90%;
+    }
+    main .ofertas .art .prod {
+        width: 70%;
+    }
+    main .botones p {
+        width: 25%;
+        line-height: 100%;
+        font-size: 16px;
+    }
+    main .botones button {
+        margin: 0 8px;
+    }
+    main .carg-productos a {
+        width: 50%;
+    }
+}
+
+@media(min-width:1024px) {
+    .carousel-control-prev,
+    .carousel-control-next {
+        background-color: #0000;
+        width: 5%;
+    }
+    main .carg-productos a {
+        width: 20%;
+        transition: all ease .3s;
+    }
+
+    main .carg-productos a:hover {
+        transform: scale(1.1);
+        background-color: var(--verde-oscuro);
+        color: white;
+    }
+
+
+
+    main .glider-contain {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    main .art .prod {
+        min-height: 420px;
+        max-height: 420px;
+    }
+
+    main .art .prod img {
+        max-height: 257px;
+    }
+    main .art .prod p.price {
+        position: relative;
+        top: -30px;
+        background: white;
+        width: 45%;
+        transition: all .3s ease;
+    }
+    main .art:hover p.price {
+        top: -35px;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 50%);
+    }
+    main .art .prod p {
+        margin: 0;
+        font-size: 16px;
+    }
+    main .art .prod:hover {
+        box-shadow: 0px 0px 20px rgb(160, 159, 159);
+
+        /* outline: solid 1px #000000CC; */
+}
+    main .art .prod .prod-name {
+        color: #000000CC;
+    }
+    main .ofertas .art {
+        width: 25%;
+    }
+    main .ofertas .art:last-child {
+        display: block;
+    }
+    main .glider .art {
+        margin: 0 auto;
+        width: 70%;
+    }
+    main .ofertas {
+        display: flex;
+        flex-direction: row;
+    }
+}

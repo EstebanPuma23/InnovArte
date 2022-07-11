@@ -1,0 +1,248 @@
+.list .destacado {
+    text-align: center;
+    margin: 30px 0;
+    color: var(--grisOscuro);
+}
+
+.list main {
+    display: flex;
+}
+
+
+/* ASIDE - Filtrado por categorias */
+
+.list aside {
+    background-color: white;
+}
+
+.list .aside-list {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    position: absolute;
+    left: -70%;
+    transition: left 0.6s;
+    z-index: 100;
+    box-shadow: 0px/* eje x */
+    0px/* eje y */
+    20px/* desenfoque de sombra */
+    rgb(160, 159, 159);
+    border-radius: 0 10px 10px 0;
+    font-family: 'Kanit', sans-serif;
+}
+
+.list h4 {
+    text-align: center;
+}
+
+.list .aside-list .filter {
+    padding: 70px 15px;
+}
+
+.list .aside-list .filter h3 {
+    font-size: 25px;
+}
+
+.list .list-body {
+    width: 80%;
+    margin: auto;
+    position: relative;
+    transition: left 1s;
+}
+
+.list .row {
+    flex-direction: column;
+    align-items: center;
+}
+
+.list .col-9 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.form-select[multiple],
+.form-select[size]:not([size="1"]) {
+    padding-right: 0;
+    background-color: #ebebeb;
+}
+
+.form-select[multiple],
+.form-select[size]:focus {
+    box-shadow: inset 0 -1px 0 #ddd;
+}
+
+.list .form-select {
+    overflow: hidden;
+    border: none;
+    padding-right: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.list option {
+    text-transform: capitalize;
+    padding: 10px
+}
+
+.list .btn-outline-primary {
+    color: var(--verde-oscuro);
+    border: var(--verde-oscuro) 1px solid;
+    margin-top: 15px;
+}
+
+.list .btn-outline-primary:hover {
+    background-color: var(--verde-oscuro);
+    color: white;
+}
+
+.list .menu {
+    font-size: 2rem;
+    position: absolute;
+    top: 14.5%;
+    left: 5%;
+    text-align: center;
+    transition: left 0.6s;
+    z-index: 100;
+}
+
+.list .checkbox {
+    display: none;
+}
+
+.list .checkbox:checked~.menu {
+    left: 60%;
+    z-index: 110;
+}
+
+.list .checkbox:checked~.aside-list {
+    left: 0;
+}
+
+
+/*  ASIDE - Filtrado por categorias  */
+
+.list main .target-container {
+    display: block;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 3em 0;
+}
+
+.list .target {
+    width: 90%;
+    margin: auto;
+}
+
+.list .art {
+    width: 80%;
+    margin: auto;
+}
+
+.list .prod {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    text-align: center;
+    line-height: 30px;
+    background-color: var(--blanco);
+    margin: 0 auto;
+    margin-bottom: 15px;
+    /* border-radius: 19px; */
+    align-items: center;
+    font-family: 'Kanit', sans-serif;
+}
+
+.list .prod img {
+    width: 100%;
+    /* border: solid 1px rgb(160, 159, 159); */
+    margin-bottom: 0;
+    /* border-radius:19px 19px 0 0 ; */
+}
+
+@media (min-width: 568px) {
+    .list .menu {
+        top: 18.5%;
+    }
+    .list main .target-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+    .list .target {
+        width: 45%;
+        justify-content: center;
+        margin: 0;
+    }
+    .list .art {
+        width: 80%;
+        margin: auto;
+    }
+    .list .prod {
+        width: 75%;
+    }
+}
+
+@media (min-width: 1024px) {
+    select {
+        outline: none;
+    }
+    .list .aside-list {
+        position: relative;
+        width: 18%;
+        border: none;
+        box-shadow: none;
+        border-radius: none;
+        height: auto;
+        left: 0;
+        background-color: #ebebeb;
+    }
+    /* .list .checkbox:checked~.list-body {
+        width: 80%;
+        left: 18%;
+    } */
+    .list .checkbox:checked~.menu {
+        left: 18%;
+    }
+    .list .menu:hover {
+        cursor: pointer;
+    }
+    .list .menu {
+        top: 25%;
+    }
+    .list .aside-list .filter {
+        padding: 50px 15px;
+    }
+    .list main .target-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin: auto;
+        width: 100%;
+    }
+    .list .target {
+        width: 30%;
+        justify-content: center;
+        margin: 0;
+    }
+    .list .art {
+        width: 100%;
+        margin: auto;
+    }
+    .list .prod {
+        width: 70%;
+    }
+    .list .art .prod p.price {
+        position: relative;
+        top: -30px;
+        background: white;
+        width: 45%;
+        transition: all .3s ease;
+    }
+    .list .art:hover p.price {
+        top: -35px;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 50%);
+    }
+    .list .prod img {
+        max-height: 257px;
+    }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+ <!-- Head -->
+ <%- include('partials/head') %> 
+    
+ <!-- Header -->
+ <%- include('partials/header') %> 
+<body>
+    <main class="container">
+        <div class="row">
+            <div class="col-12 col-md-10 col-lg-8 mt-5 mx-auto">
+                <div class="back-div" ><a class="back-btn" href="/admin" ><i class="fas fa-arrow-left"></i> Volver </a></div>
+                <div class="card">
+                    <div class="card-header text-light bg-dark">
+                        <h4>Editar producto</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="/products/update/<%= product.id %>?_method=PUT" class="row" method="POST" enctype="multipart/form-data" id="form-add-product">
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control <%= locals.errors && errors.name ? 'is-invalid' : product.name %>" id="name" placeholder="Nombre del producto" name="name" value="<%= locals.old && old.name ? old.name : product.name%>">
+                                        <label for="name">Nombre del producto</label>
+                                      </div>
+                                      <span id="nameError" class="text-danger small ms-2"><%= locals.errors && errors.name ? errors.name.msg : null%> </span>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <textarea style="resize: none; height: 100px;" class="form-control <%= locals.errors && errors.description ? 'is-invalid' : product.description %>" placeholder="Descripción del producto" id="floatingTextarea" name="description"><%= locals.old && old.description ? old.description : product.description %></textarea>
+                                        <label for="floatingTextarea">Descripción</label>
+                                      </div>
+                                        <span id="descriptionError" class="text-danger small ms-2"><%= locals.errors && errors.description ? errors.description.msg : null%> </span>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating mb-3">
+                                        <textarea style="resize: none; height: 100px;" class="form-control" placeholder="Caracteristicas del producto" id="floatingTextarea" name="feactures" ><%= product.features.length === 1 ? product.features[0].name : product.features.reduce((acum, feature, i) => `${i === 1 ? acum.name : acum} - ${feature.name}`)%> </textarea>
+                                        <label for="floatingTextarea">Características</label>
+                                      </div>
+                                      <span id="feacturesError" class="text-danger small ms-2"><%= locals.errors && errors.feactures ? errors.feactures.msg : null%> </span>
+                                      <div>
+                                        <select class="form-select" style="margin-bottom: 15px ;" id="category" name="category">
+                                            <option value="" selected hidden>Selecciona la categoría</option>
+                                            <% categories.forEach(category => { %>
+                                                <option value="<%= category.id %>" <%= locals.old && old.category == category.id  ? 'selected' : category.id == product.categoryId ? 'selected' : null %> ><%= category.name %></option>
+                                                <% }) %>  
+                                        </select>
+                                        <span id="categoryError" class="text-danger small ms-2"><%= locals.errors && errors.category ? errors.category.msg : null%> </span>
+                                    </div>
+                                </div>
+                               <div class="col-12 col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control <%= locals.errors && errors.price ? 'is-invalid' : product.price %>" id="price" name="price" value=<%= locals.old && old.price ? old.price : product.price %>>
+                                    <label for="price">Precio</label>
+                                  </div>
+                                  <span id="priceError" class="text-danger small ms-2"><%= locals.errors && errors.price ? errors.price.msg : null%> </span>
+                               </div> 
+                               <div class="col-12 col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control <%= locals.errors && errors.discount ? 'is-invalid' : product.discount %>" id="discount" name="discount" value=<%= locals.old && old.discount ? old.discount : product.discount %>>
+                                    <label for="discount">Descuento</label>
+                                  </div>
+                                  <span id="discountError" class="text-danger small ms-2"><%= locals.errors && errors.discount ? errors.discount.msg : null%> </span>
+                               </div> 
+                               <div class="col-12 col-md-6">
+                                <div class="mb-3">
+                                    <label for="image" class="btn btn-outline-secondary w-100 mt-2" id="btnImagen">Subir imagen</label>
+                                    <input name="image" hidden class="form-control" type="file" id="image">
+                                    <span id="imageError" class="text-danger small ms-2"><%= locals.errors && errors.image ? errors.image.msg : null%> </span>
+                                  </div>
+                               </div>
+                               <span id = "errorEmpty" class = "text-danger">
+
+                            </span>
+                                <div class="col-12 mt-5">
+                                    <button type="submit" class="btn btn-outline-dark w-100">Guardar</button>
+
+                                </div>
+                           
+                          </form>
+                    </div>
+                   
+                </div>
+            </div>
+           
+        </div>
+    </main>
+</body>
+ <!-- Footer -->
+ <%- include('partials/footer') %> 
+ <script src="/js/productValidator.js"></script>
+</html>
