@@ -7,23 +7,27 @@ const { validationResult } = require("express-validator")
 const db = require('../database/models');
 const { Op } = require('sequelize');
 const calcDescuento = (price, discount) => price - (discount * price / 100);
+const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 module.exports = {
     detail: (req, res) => {
         let product = db.Product.findByPk(req.params.id)
+        let category = db.Category.findAll()
         let features = db.Feature.findAll({
             where: {
                 productId: {
-                    [Op.substring]: req.params.id
+                    [Op.eq]: req.params.id
                 }
             }
         })
 
-        Promise.all([product, features])
+        Promise.all([product, features, category])
 
-        .then(([product, features]) => {
+        .then(([product, features, category]) => {
             return res.render('product-view', {
                 product,
+                category,
                 calcDescuento,
+                toThousand,
                 features,
                 title: 'detalle de producto'
             })
@@ -44,12 +48,13 @@ module.exports = {
         let errors = validationResult(req);
 
         if (errors.isEmpty()) {
-            const { name, description, price, feactures, category } = req.body;
+            const { name, description, price, discount, feactures, category } = req.body;
 
             db.Product.create({
                     name: name.trim(),
                     description: description.trim(),
                     price: price,
+                    discount: discount,
                     categoryId: category,
                     feactures: feactures.trim(),
                     image: req.file ? req.file.filename : "default-product.jpg"
@@ -65,8 +70,8 @@ module.exports = {
                     })
                     console.log(arrayFeatures)
                     db.Feature.bulkCreate(
-                        arrayFeatures
-                    )
+                            arrayFeatures
+                        )
                         .then(feactures => {
                             res.redirect('/admin')
                         })
@@ -112,9 +117,11 @@ module.exports = {
 
         Promise.all([product, categories])
 
-            .then(([product, categories]) => {
+        .then(([product, categories]) => {
                 return res.render('productEdit', {
                     categories,
+                    toThousand,
+                    calcDescuento,
                     product,
                     title: "Editar producto"
                 })
@@ -127,27 +134,24 @@ module.exports = {
 
         if (errors.isEmpty()) {
             const { name, description, price, category, discount, image } = req.body;
-            db.Product.update(
-                {
+            db.Product.update({
                     name: name.trim(),
                     description: description.trim(),
                     price,
                     discount: discount,
                     categoryId: category,
                     image: req.file ? req.file.filename : image
-                },
-                {
+                }, {
                     where: {
                         id: req.params.id
                     }
-                }
-            )
+                })
                 .then(() => {
                     db.Feature.destroy({
-                        where: {
-                            productId: req.params.id
-                        }
-                    })
+                            where: {
+                                productId: req.params.id
+                            }
+                        })
                         .then(product => {
                             let features = req.body.feactures.split("-")
                             let arrayFeatures = features.map(feature => {
@@ -159,8 +163,8 @@ module.exports = {
                             })
                             console.log(arrayFeatures)
                             db.Feature.bulkCreate(
-                                arrayFeatures
-                            )
+                                    arrayFeatures
+                                )
                                 .then(feactures => {
                                     res.redirect('/admin')
                                 })
@@ -192,28 +196,29 @@ module.exports = {
     },
     search: (req, res) => {
         let products = db.Product.findAll({
-                where: {
-                    name: {
-                        [Op.substring]: req.query.keyword
-                    }
+            where: {
+                name: {
+                    [Op.substring]: req.query.keyword
                 }
-            })
-            let categories = db.Category.findAll();
-            Promise.all([products, categories])
+            }
+        })
+        let categories = db.Category.findAll();
+        Promise.all([products, categories])
             .then(([products, categories]) => {
                 return res.render('product-list', {
                     products,
+                    toThousand,
+                    calcDescuento,
                     categories,
                     title: 'Resultado de la búsqueda'
                 })
             })
     },
-       filter: (req, res) =>  {
-        let category = db.Category.findByPk(req.query.category,{
-           
-            include: [
-                {
-                    association : 'products',
+    filter: (req, res) => {
+        let category = db.Category.findByPk(req.query.category, {
+
+            include: [{
+                    association: 'products',
                 }
 
             ]
@@ -222,34 +227,38 @@ module.exports = {
 
         Promise.all([category, categories])
 
-        .then(([category,categories]) => {
-            return res.render('product-list', {
-                title: 'Categoría: ' + req.query.category,
-                categories,
-                calcDescuento,
-                products : category.products
+        .then(([category, categories]) => {
+                return res.render('product-list', {
+                    title: 'Categoría: ' + req.query.category,
+                    categories,
+                    products: category.products,
+                    toThousand,
+                    calcDescuento,
+                })
             })
-        })
-        .catch(error => console.log(error))
+            .catch(error => console.log(error))
     },
 
     list: (req, res) => {
         let categories = db.Category.findAll()
         let products = db.Product.findAll()
 
-        Promise.all([products,categories])
+        Promise.all([products, categories])
             .then(([products, categories]) => {
                 return res.render('product-list', {
                     products,
                     categories,
                     calcDescuento,
+                    toThousand,
                     title: "Listado de productos"
                 })
             })
             .catch(error => console.log(error))
     },
 
-    off: (req, res) => {
+
+
+    offer: (req, res) => {
         let categories = db.Category.findAll()
         let products = db.Product.findAll({
                 where: {
@@ -264,15 +273,31 @@ module.exports = {
                 return res.render('product-list', {
                     products,
                     categories,
+                    toThousand,
                     calcDescuento,
                     title: "Listado de productos"
                 })
             })
             .catch(error => console.log(error))
     },
-
     destroy: (req, res) => {
 
+        db.Product.findByPk(req.params.id)
+        .then(imgProduct => {
+            if (imgProduct.image != 'default-product.jpg') {
+                fs.rm(`./public/images/${imgProduct.image}`, { recursive:true }, (err) => {
+                    if(err){
+                        // Error de borrado
+                        console.error(err.message);
+                        return;
+                    }
+                    console.log("Sos un animal del gol");
+                })
+            }else {
+                console.log('no se borró la imagen por defecto');
+                return;
+            }
+        })
         let features = db.Feature.destroy({
             where: {
                 productId: req.params.id

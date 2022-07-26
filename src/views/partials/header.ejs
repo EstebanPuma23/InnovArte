@@ -1,6 +1,10 @@
 <header>
     <div class="bloque-sesion">
         <ul type="none">
+    <% if (locals.userLogin) { %>
+        <li style="margin-left:2em ;"><i style="color:white ;" class="fas fa-user"></i><a href="/users/profile"><%= locals.userLogin.name %> </a></li>
+        <li style="margin-left:1em ;"><a href="/users/logout">Cerrar sesion</a></li>
+        <% }else { %> 
             <li>
                 <a href="/users/login"><i class="far fa-user"></i> Iniciar sesión</a>
             </li>
@@ -10,6 +14,7 @@
             <li>
                 <a href="/admin"><i class="fas fa-cog"></i> Administrador</a>
             </li>
+            <% } %> 
         </ul>
     </div>
     <nav class="bloque-nav">

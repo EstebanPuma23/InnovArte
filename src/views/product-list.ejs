@@ -51,9 +51,9 @@
                           ><img src="/images/<%= product.image %>" alt=""
                         /></a>
                         <% if (product.discount > 0) { %>
-                          <p class="price"><span><%= product.discount %>% OFF</span> <br> $ <%= calcDescuento(product.price, product.discount) %></p>    
+                          <p class="price"><span><%= product.discount %>% OFF</span> <br> $ <%= toThousand(calcDescuento(product.price, product.discount)) %></p>    
                       <% } else { %>
-                          <p class="price">$ <%= product.price %></p>
+                          <p class="price">$ <%= toThousand(product.price) %></p>
                       <% } %>
                         <div class="botones">
                           <a

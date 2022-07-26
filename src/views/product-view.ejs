@@ -1,39 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include('partials/head') %> 
+    <%- include('partials/head', {title: product.name}) %> 
 
 
 <body>
     <%- include('partials/header') %> 
 
     <main class="product-view">
-        <div class="contenedor-detalle">
+        <div style="display: none;" class="contenedor-detalle">
             <a href="/detail/<%= product.id %> "></a>
 
             <div class="img-articulo">
                 <img src="/images/<%= product.image%>" alt="" />
-                <p class="product-precio"> $<%= product.price %> </p>
             </div>
-            <div class="color-boton">
-                <!--
-                <div class="img-colores">
-                    <h3 class="color">Color</h3>
-                    <img src="/images/colores.png">
-                </div>
-            -->
+
+            <div class="priceDiscount">
+                <% if (product.discount > 0) { %>
+                    <p class="product-detail-price small">
+                        <span>$<%= product.price %></span> /
+                        <b><%= product.discount %>% OFF</b>
+                    </p>
+                    <p class="product-detail-price">
+                        $
+                        <%= calcDescuento(product.price, product.discount) %>
+                    </p>
+                    <% }else { %>
+                        <p class="product-detail-price">
+                            $
+                            <%= product.price %>
+                        </p>
+    
+                        <% } %>    
+            </div>
                 <div class="buton-producto">
                     <div class="boton-agregar">
                         <!-- <button type="submit">Agregar al carrito</button> -->
                         <a class="btn btn-outline-secondary w-100 mt-2" href="#" onclick="addItem(event, '<%=product.id%>')"">Agregar al carrito</a>
-
                     </div>
                     <div class="boton-comprar">
                         <a class="btn btn-outline-secondary w-100 mt-2" href="/">seguir comprando</a>
     
                     </div>
                 </div>
-            </div>
             
             <div class="descripcion">
                 <section>
@@ -52,6 +61,105 @@
                 </section>
             </div>
            
+        </div>
+
+
+        <div class="container products-wrapper">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="products-title">Detalle del producto:
+                        <%= product.name %>
+                    </h2>
+                </div>
+            </div>
+            <div class="product-detail">
+                <div class="row">
+                    <div class="col-12 col-lg-8">
+                        <img src="/images/<%= product.image %> " alt="product image" class="product-detail-img">
+                        <div class="specs-detail-destkop">
+                            <hr>
+                            <p class="description-title">Descripción</p>
+                            <p class="product-detail-description">
+                                <%= product.description %>
+                            </p>
+                            <hr>
+                            <p class="specs-title">Especificaciones</p>
+                            <div class="caracteristicas">
+                                <ol>
+                                    <% features.forEach(descripcion => { %>
+        
+                                        <li><%= descripcion.name %> </li>
+        
+                                    <% }) %>
+                                    
+                                </ol>
+                            </div></div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <article class="product-detail-info">
+                            <h2 class="product-detail-title">
+                                <%= product.name %>
+                            </h2>
+                            
+                                <% category.forEach(e => { %>
+                                    <% if (e.id === product.categoryId) { %>
+                                        <p class="category"><%= e.name %></p>
+                                    <% } %>
+                                <% }) %>
+                            
+
+                            <% if (product.discount > 0) { %>
+                                <p class="product-detail-price small">
+                                    <span>$<%= toThousand(product.price) %></span> /
+                                        <b><%= product.discount %>% OFF</b>
+                                </p>
+                                <p class="product-detail-price">
+                                    $
+                                    <%= toThousand(calcDescuento(product.price, product.discount)) %>
+                                </p>
+                                <% }else { %>
+                                    <p class="product-detail-price">
+                                        $
+                                        <%= toThousand(product.price) %>
+                                    </p>
+
+                                    <% } %>
+                                    
+                                        <ul class="actions-list">
+                                            <li>
+                                                <i class="fas fa-credit-card"></i>
+                                                <p>Pagá en 12 cuotas sin interes</p>
+                                            </li>
+                                        </ul>
+
+                                        <a href="#" class="buy-now-button" onclick="addItem(event, '<%=product.id%>')"">Agregar al carrito</a>
+                                        
+                                        <hr class="d">
+
+                                        <a href="/" class="action-button edit">Seguir Comprando</a>
+                                        <hr>
+                                        <div class="specs-detail-movile"><p class="description-title">Descripción</p>
+                                            <p class="product-detail-description">
+                                                <%= product.description %>
+                                            </p>
+                    <hr>
+                                            <p class="specs-title">Especificaciones</p>
+                                            <div class="caracteristicas">
+                                                <ol>
+                                                    <% features.forEach(descripcion => { %>
+                        
+                                                        <li><%= descripcion.name %> </li>
+                        
+                                                    <% }) %>
+                                                    
+                                                </ol>
+                                            </div></div>
+                                    
+                        </article>
+
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <%- include('partials/footer') %> 

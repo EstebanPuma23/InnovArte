@@ -37,7 +37,7 @@
                         <td><%= product.name %> </td>
                         <td> $ <%= product.price %> </td>
                         <td><%= product.description %> </td>
-                        <td><%= product.features.length === 1 ? product.features[0].name : product.features.reduce((acum, feature, i) => `${i === 1 ? acum.name : acum} - ${feature.name}`) %> </td>
+                        <td><%= product.features.length === 0 ? 'Sin caracteristicas' : product.features.length === 1 ? product.features[0].name : product.features.reduce((acum, feature, i) => `${i === 1 ? acum.name : acum} - ${feature.name}`)  %></td> 
                         <td class="d-flex justify-content-around">
                           <a href="/products/edit/<%= product.id %>" class="btn btn-sm btn-success" style="width: 35px;"><i class="fas fa-edit"></i></a>
                           <div>

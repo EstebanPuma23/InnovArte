@@ -10,18 +10,19 @@
     border: solid var(--verde-claro);
 }
 
-.login .form-login .titulo-logo {
+ .titulo-logo {
     text-align: center;
+    color: rgba(0, 0, 0, 70%)
 }
 
-.login .titulo-logo {
+ .titulo-logo {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
-.login .titulo-logo img {
+ .titulo-logo img {
     display: none;
     width: 35%;
     height: max-content;
@@ -48,13 +49,17 @@
 
 .login .password input{
     width: 87%;
+    border-radius: 5px 0 0 5px;
+    border-right: none;
 }
 
 .login .contraseña button{
     background:none;
-    border: none;
     color: black;
     width: 13%;
+    border: solid 2px grey;
+    border-radius: 0 5px 5px 0;
+    border-left: none;
 }
 
 .login .boton-login {
@@ -106,6 +111,7 @@
 @media(min-width:568px) {
     .login .form-login {
         align-content: center;
+        width: 50%;
     }
     .login .formulario {
         width: 60%;
@@ -114,15 +120,15 @@
 }
 
 @media(min-width:1024px) {
-    .login .form-login {
-        width: 60%;
+     .form-login {
+        width: 45%;
         flex-direction: column;
         flex-wrap: nowrap;
     }
-    .login .titulo-logo {
+     .titulo-logo {
         width: 100%;
     }
-    .login .titulo-logo img {
+     .titulo-logo img {
         display: block;
     }
     .login .email input,

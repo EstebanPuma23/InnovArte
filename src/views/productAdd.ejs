@@ -56,6 +56,13 @@
                                   <span id="priceError" class="text-danger small ms-2"><%= locals.errors && errors.price ? errors.price.msg : null%> </span>
                                </div>
                                <div class="col-12 col-md-6">
+                                <div class="form-floating mb-3">
+                                    <input type="number" class="form-control <%= locals.errors && errors.discount ? 'is-invalid' : null %>" id="discount" name="discount" value=<%= locals.old && old.discount ? old.discount : null %>>
+                                    <label for="discount">Descuento</label>
+                                  </div>
+                                  <span id="discountError" class="text-danger small ms-2"><%= locals.errors && errors.discount ? errors.discount.msg : null%> </span>
+                               </div>
+                               <div class="col-12 col-md-6">
                                 <div class="mb-3">
                                     <label for="image" class="btn btn-outline-secondary w-100 mt-2" id="btnImagen">Subir imagen</label>
                                     <input hidden class="form-control" type="file" id="image" name="image" multiple>

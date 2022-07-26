@@ -5,12 +5,13 @@
     max-width: 300px;
     border: 2px solid var(--verde-claro);
     border-radius: 5px;
+    background-color: white;
 }
 
 .register div.formulario-register h2 {
     text-align: center;
     padding: 20px 0;
-    color: var(--verde-claro);
+    color: rgba(0, 0, 0, 70%);
 }
 
 .form div label {
@@ -18,11 +19,10 @@
 }
 .form .condicion-registro{
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 .form .condicion-registro input{
  width: auto;
- margin: auto;
  padding: auto;
  
 }
@@ -41,6 +41,10 @@
     height: 30px;
     margin: 0.5rem;
 
+}
+
+.form .condicion-registro input{
+    padding: 0px;
 }
 
 .form div.condicion-registro {
@@ -84,4 +88,23 @@
     border: none;
     color: black;
     width: 13%;
+}
+
+
+@media(min-width: 1024px) {
+
+    .register .formulario-register{
+        width: 45%;
+        max-width: none;
+    }
+
+    .register .form {
+        width: 60%;
+        margin: auto;
+    }
+
+    .register .form input{
+        padding: 26px 10px;
+    }
+
 }

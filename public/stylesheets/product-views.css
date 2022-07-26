@@ -4,6 +4,7 @@
     margin: 0 auto;
 }
 .contenedor-detalle{
+    background-color: var(--blanco);
     width: 90%;
     margin: 10px auto;
     display:flex;
@@ -16,22 +17,22 @@
     flex-direction: column;
 }
 .product-view .contenedor-detalle .img-articulo img{
-  width: 50%;
-  margin: auto;
-
+    width: 50%;
+    margin: auto;
+    
 }
 .product-view .contenedor-detalle .product-preci{
- padding: 10px 0;
- border-bottom: 2px solid var(--grisOscuro);
- text-align: center;
+    padding: 10px 0;
+    border-bottom: 2px solid var(--grisOscuro);
+    text-align: center;
 }
 
 .product-view .contenedor-detalle .img-colores{
     width: 100%;
-   }
+}
 .product-view .contenedor-detalle .img-colores img{
     width: 100%;
-   }
+}
 .product-view .product-preci{
     width: 100%;
 }
@@ -47,10 +48,10 @@
 .product-view .contenedor-detalle .descripcion p{
     padding: 10px 0;
 }
-.product-view .contenedor-detalle .descripcion .caracteristicas{
+.product-view .caracteristicas{
     padding-left: 20px;
 }
-.product-view .contenedor-detalle .descripcion .caracteristicas ol li{
+.product-view .caracteristicas ol li{
     list-style:circle;
     font-size: 11px;
     padding: 5px 0;
@@ -59,10 +60,10 @@
     display:flex;
     margin: 10px;
     justify-content: center;
-
+    
 }
 .product-view .contenedor-detalle .buton-producto div{
-   padding: 0 10px;
+    padding: 0 10px;
 }
 .product-view .contenedor-detalle .buton-producto button{
     padding: 6px 20px;
@@ -94,6 +95,7 @@
 @media (min-width:1024px) {
     .contenedor-detalle{
         flex-direction:row;
+        width: 85%;
     }
     .product-view .contenedor-detalle .img-articulo{
         width: 50%;
@@ -105,10 +107,27 @@
        .product-view .contenedor-detalle .descripcion{
         width: 55%;
     }
-    .product-view .contenedor-detalle .descripcion .caracteristicas ol li{
+    .product-view .caracteristicas ol li{
         font-size: 15px;
     }
     .product-view .contenedor-detalle .buton-producto button{
         font-size: 16px;
     }
-}
+    
+    .priceDiscount {
+        display: block;
+    }
+    
+          .product-view .product-detail-price {
+              font-size: 5.5em;
+              margin: 10px 0;
+            }
+
+            .product-view .small {
+                font-size: 1.8em;
+                color: var(--verde-oscuro);
+            }
+            .product-view .small span {
+                text-decoration: line-through;
+            }
+        }

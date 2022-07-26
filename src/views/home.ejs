@@ -40,8 +40,12 @@
             </div>
         </section>
         <section class="main-section">
-            <h3 class="destacado">Productos destacados</h3>
-            <section class="productos">
+            <% if (products.length === 0) { %>
+                <h3 class="destacado" style="padding: 150px 0;">No hay productos disponibles <i class="fa-solid fa-heart-crack"></i></h3>
+                <% }else { %>
+        
+                    <h3 class="destacado">Productos destacados</h3>
+                    <section class="productos">
                 <section class="destacados">
                     <div class="glider-contain">
                         <div class="glider">
@@ -52,38 +56,38 @@
                                                 <a href="/products/detail/<%= product.id %>"><img src="/images/<%= product.image %>"
                                                     alt="" /></a>
                                                     <% if (product.discount > 0) { %>
-                                                        <p class="price"><span><%= product.discount %>% OFF</span> <br> $ <%= calcDescuento(product.price, product.discount) %></p>    
-                                                    <% } else { %>
-                                                        <p class="price">$ <%= product.price %></p>
-                                                    <% } %>
-                                                <div class="botones">
+                                                        <p class="price"><span><%= product.discount %>% OFF</span> <br> $ <%= toThousand(calcDescuento(product.price, product.discount)) %></p>    
+                                                        <% } else { %>
+                                                            <p class="price">$ <%= toThousand(product.price) %></p>
+                                                            <% } %>
+                                                            <div class="botones">
                                                     <!-- <input class="cant-prod" type="number" value="1" min="1"> -->
                                                     <a class="agregar"  href="#" onclick="addItem(event, '<%=product.id%>')"><i class="fas fa-cart-plus"></i></a>
-                                                 </div>
+                                                </div>
                                                 <div class="detalles-producto">
                                                     <p><%= product.name %></p>
                                                 </div>
                                             </article>
                                         </section>
                                     </div>
-                             <% }) %>
+                                    <% }) %>
                         </div>
                         <button aria-label="Previous" class="glider-prev">«</button>
                         <button aria-label="Next" class="glider-next">»</button>
                         <div role="tablist" class="dots" id="dots"></div>
-                      </div>
+                    </div>
                 </section>
                 <h3>Ofertas</h3>
                 <section id="ofertas" class="ofertas">
-                            <% ofertas.forEach(product => { %>
+                    <% ofertas.forEach(product => { %>
 
-                                <% if (product.discount > 0) { %>
-                                    <section class="art">
-                                        <article class="prod">
-                                            <a href="/products/detail/<%= product.id %>"><img src="/images/<%= product.image %> "
-                                                    alt="" /></a>
-                                                        <p class="price"><span><%= product.discount %>% OFF</span> <br> $ <%= calcDescuento(product.price, product.discount) %></p>
-                                            <div class="botones"> 
+                        <% if (product.discount > 0) { %>
+                            <section class="art">
+                                <article class="prod">
+                                    <a href="/products/detail/<%= product.id %>"><img src="/images/<%= product.image %> "
+                                        alt="" /></a>
+                                        <p class="price"><span><%= product.discount %>% OFF</span> <br> $ <%= toThousand(calcDescuento(product.price, product.discount)) %></p>
+                                        <div class="botones"> 
                                                 <a class="agregar"  href="#" onclick="addItem(event, '<%=product.id%>')"><i class="fas fa-cart-plus"></i></a>
                                             </div>
                                             <div class="detalles-producto">
@@ -91,14 +95,15 @@
                                             </div>
                                         </article>
                                     </section>
-                                <% } %>
-
-                         <% }) %>
+                                    <% } %>
+                                    
+                                <% }) %>
                 </section>
             </section>
             <div class="carg-productos">
                 <a href="/products/product-list">Ver más</a>
             </div>
+            <% } %>
         </section>
     </main>
     <%- include('partials/footer') %>
